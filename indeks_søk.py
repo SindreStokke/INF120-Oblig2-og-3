@@ -200,9 +200,12 @@ def søk_i_indeks_med_mengde(indeks, mengde_av_søkeord):
     >>> søk_i_indeks_med_streng(indeks, {"Dette", "er", "ikke", "i", "indeksen"})
     {}
     """
-    mulige_bøker = None  # Slett denne linja
-    # Skriv kode her
-
+    mulige_bøker = []
+    for ord in mengde_av_søkeord:
+        if ord in indeks:
+            mulige_bøker.append(indeks[ord])
+    
+    mulige_bøker = set.intersection(*mulige_bøker)
     return mulige_bøker
 
 
