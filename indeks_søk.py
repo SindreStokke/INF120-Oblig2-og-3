@@ -243,8 +243,11 @@ def klargjør_søkestreng(søkestreng):
     >>> klargjør_søkestreng(streng)
     "Hei på deg"
     """
-    klargjort_streng = None  # Slett denne linja
-    # Skriv kode her
+    klargjort_streng = søkestreng
+    klargjort_streng = klargjort_streng.strip()
+    klargjort_streng = klargjort_streng.lower()
+    klargjort_streng = klargjort_streng.split(' ')
+    klargjort_streng = set(klargjort_streng)
 
     return klargjort_streng
 
@@ -292,8 +295,18 @@ def søk_i_indeks_med_streng(indeks, søkestreng):
     >>> søk_i_indeks_med_streng(indeks, "Dette er ikke i indeksen")
     {}
     """
-    mulige_bøker = None  # Slett denne linja
-    # Skriv kode her
+    klargjort_streng = søkestreng
+    klargjort_streng = klargjort_streng.strip()
+    klargjort_streng = klargjort_streng.lower()
+    klargjort_streng = klargjort_streng.split(' ')
+    mengde_av_søkeord = set(klargjort_streng)
+
+    mulige_bøker = []
+    for ord in mengde_av_søkeord:
+        if ord in indeks:
+            mulige_bøker.append(indeks[ord])
+    
+    mulige_bøker = set.intersection(*mulige_bøker)
 
     return mulige_bøker
 
