@@ -319,3 +319,6 @@ if __name__ == "__main__":
     print(søk_i_indeks_med_streng(indeks, søkestreng))
     # Denne skal printe
     #  {'Chronicles_of_Martin_Hewitt.bok', 'The_Hound_of_the_Baskervilles.bok'}
+
+
+søk_i_indeks_med_streng(indeks, "Sherlock Holmes, scarlet")
